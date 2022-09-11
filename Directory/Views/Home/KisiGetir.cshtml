@@ -1,0 +1,34 @@
+﻿@using Directory.Enums
+ @model UserModel
+@{
+    ViewData["Title"] = "KisiGetir";
+}
+
+<h1>KisiGetir</h1>
+
+@using (Html.BeginForm("KisiGuncelle", "Home", FormMethod.Post))
+{
+    @Html.LabelFor(x=>x.Id);
+    @Html.TextBoxFor(x=>x.Id,new { @class="form-control",@readonly="readonly"})
+
+
+    @Html.LabelFor(x => x.NameSurname)
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    <br />
+
+     @Html.LabelFor(x => x.category)
+    @Html.DropDownList("category", new SelectList(Enum.GetValues(typeof(Category))), "Kategori Seç", new {
+    @class = "form-control"
+    })
+
+
+    @Html.LabelFor(x => x.PhoneNumber)
+    @Html.TextBoxFor(x => x.PhoneNumber,new { @class = "form-control" })
+    <br />
+
+     <button class="btn btn-success">Kisi Guncelle</button>
+
+
+
+
+}

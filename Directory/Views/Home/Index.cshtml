@@ -1,0 +1,39 @@
+﻿@model List<UserModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+@using(Html.BeginForm())
+{
+    <p>
+        Kişi Ara: @Html.TextBox("p")
+   <input type="submit" value="Bul"/>
+    
+    
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>İsim-Soyisim</th>
+        <th>Kategori</th>
+        <th>Telefon Numarası</th>
+        <th>Oluşturulma Tarihi</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.Id</td>
+        <td>@item.NameSurname</td>
+        <td>@item.category</td>
+        <td>@item.PhoneNumber</td>
+        <td>@item.CreatedDate</td>
+        <td><a href="/Home/KisiSil/@item.Id" class="btn btn-danger">Sil</a></td>
+        <td><a href="/Home/KisiGetir/@item.Id" class="btn btn-warning">Güncelle</a></td>
+
+</tr>
+    }
+</table>
+<a href="/Home/YeniKisi" class="btn btn-primary">Yeni Kişi Ekle</a>
