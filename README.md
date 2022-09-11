@@ -1,3 +1,3 @@
 # PhoneDirectory
 ### .Net Core (C#)
-### MS SQL
+### MS SQL (Dosya içerisinde script mevcuttur)
