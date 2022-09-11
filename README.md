@@ -1,3 +1,3 @@
 # PhoneDirectory
-## .Net Core (C#)
-## MS SQL
+### .Net Core (C#)
+### MS SQL
